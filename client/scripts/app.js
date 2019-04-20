@@ -36,12 +36,12 @@ var App = {
       for (var id in Messages) {
         if (Messages[id].roomname) {
           var roomname = Messages[id].roomname;
-          Rooms[roomname] = roomname;
+          Rooms.myRooms[roomname] = roomname;
         } 
       }
 
       // render rooms
-      for (var roomname in Rooms) {
+      for (var roomname in Rooms.myRooms) {
         RoomsView.renderRoom(roomname);
       }
 
@@ -68,8 +68,8 @@ var App = {
         }
         
         // update Rooms object with new rooms and render immediately
-        if (!(roomname in Rooms)) {
-          Rooms[roomname] = roomname;
+        if (!(roomname in Rooms.myRooms)) {
+          Rooms.myRooms[roomname] = roomname;
           RoomsView.renderRoom(roomname);
         }
 

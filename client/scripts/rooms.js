@@ -1,9 +1,11 @@
 var Rooms = {
-    
+  
+  myRooms: {},
+
   add: function(newRoom) {
-    Rooms[newRoom] = newRoom;
+    this.myRooms[newRoom] = newRoom;
     RoomsView.renderRoom(newRoom);
-  }
+  },
     
 
 };
