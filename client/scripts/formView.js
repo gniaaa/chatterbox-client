@@ -15,7 +15,7 @@ var FormView = {
       username: App.username,
       text: $('#message').val(),
       roomname: $('#rooms select').val()
-    }
+    };
     
     Parse.create(message);
     App.refresh();
