@@ -10,14 +10,15 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
     console.log('click!');
-    var text = $('#message').val();
-    var username = App.username;
-    var room = RoomsView.currentRoom;
-    return {
-      username: username,
-      text: text,
-      roomname: room
+
+    var message = {
+      username: App.username,
+      text: $('#message').val(),
+      roomname: $('#rooms select').val()
     }
+    
+    Parse.create(message);
+    App.refresh();
   },
 
   setStatus: function(active) {

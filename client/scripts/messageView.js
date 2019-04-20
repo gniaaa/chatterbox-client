@@ -10,3 +10,8 @@ var MessageView = {
     )
 
 };
+
+// "<div class='chat'>" +
+// "<div class='username'>ivan</div>" +
+// "<div class='text'>hello</div>" +
+// "</div>"

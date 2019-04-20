@@ -45,10 +45,37 @@ var App = {
         RoomsView.renderRoom(roomname);
       }
 
-
       callback();
     });      
     
+  },
+
+  refresh: function() {
+    Parse.readAll((data) => {
+
+      // retrieve data again, start from bottom
+      var newResults = data.results;
+      for (var i = newResults.length - 1; i >= 0; i--) {
+        var id = newResults[i].objectId;
+        var roomname = newResults[i].roomname;
+        
+        // update Messages object with new messages and render immediately
+        if (!(id in Messages)) {
+          Messages[id] = newResults[i];
+          if (newResults[i].text) {
+            MessagesView.renderNewMessage(newResults[i]);
+          }
+        }
+        
+        // update Rooms object with new rooms and render immediately
+        if (!(roomname in Rooms)) {
+          Rooms[roomname] = roomname;
+          RoomsView.renderRoom(roomname);
+        }
+
+      }
+      
+    });
   },
 
   startSpinner: function() {
