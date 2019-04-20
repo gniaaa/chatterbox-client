@@ -20,17 +20,6 @@
         window.location.search = search;
       }
     </script>
-    <script>
-
-      $(document).ready(function() {
-        $(document).on('click', '.username', function(event) {
-          Friends.toggleStatus(event.target.innerText);
-          console.log('called');
-        })
-      });
-      
-            
-    </script>
   </head>
   <body>
     <div id="main">
@@ -47,9 +36,6 @@
       </form>
     </div>
     <div id="chats">
-
-
-
 
     </div>
     <script src="client/env/config.js"></script>

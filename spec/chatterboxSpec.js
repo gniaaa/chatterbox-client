@@ -92,6 +92,7 @@ describe('chatterbox', function() {
         text: 'I didn\'t get a harumph outa that guy.!',
         roomname: 'lobby'
       });
+      //debugger;
       $('#chats').find('.username').trigger('click');
       expect(Friends.toggleStatus.called).to.be.true;
 
