@@ -83,8 +83,28 @@ form input[type=text] {
     padding: 10px;
 }
 
-.friend {
+/* .friend {
     color: #fff;
     background-color: #0090da;
+} */
+
+.roomname {
+    display: none;
 }
 
+.friend {
+    background-color: rgb(253, 203, 201);
+}
+
+.friend .username {
+    color: rgb(153, 50, 60);
+}
+
+.friend .text {
+    color: rgb(117, 117, 117);
+}
+
+.username:hover {
+    cursor: pointer;
+    color: #adabac;
+}
