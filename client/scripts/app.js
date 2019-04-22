@@ -4,7 +4,7 @@ var App = {
 
   username: 'anonymous',
 
-  initialize: function() {
+  initialize: function () {
     App.username = window.location.search.substr(10);
 
     FormView.initialize();
@@ -17,7 +17,7 @@ var App = {
 
   },
 
-  fetch: function(callback = ()=>{}) {
+  fetch: function (callback = () => { }) {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
@@ -37,7 +37,7 @@ var App = {
         if (Messages[id].roomname) {
           var roomname = Messages[id].roomname;
           Rooms.myRooms[roomname] = roomname;
-        } 
+        }
       }
 
       // render rooms
@@ -45,12 +45,14 @@ var App = {
         RoomsView.renderRoom(roomname);
       }
 
+      $(".roomname").not(":contains('lobby')").parent().hide();
+
       callback();
-    });      
-    
+    });
+
   },
 
-  refresh: function() {
+  refresh: function () {
     Parse.readAll((data) => {
 
       // retrieve data again, start from bottom
@@ -58,7 +60,7 @@ var App = {
       for (var i = newResults.length - 1; i >= 0; i--) {
         var id = newResults[i].objectId;
         var roomname = newResults[i].roomname;
-        
+
         // update Messages object with new messages and render immediately
         if (!(id in Messages)) {
           Messages[id] = newResults[i];
@@ -66,7 +68,7 @@ var App = {
             MessagesView.renderNewMessage(newResults[i]);
           }
         }
-        
+
         // update Rooms object with new rooms and render immediately
         if (!(roomname in Rooms.myRooms)) {
           Rooms.myRooms[roomname] = roomname;
@@ -74,16 +76,16 @@ var App = {
         }
 
       }
-      
+
     });
   },
 
-  startSpinner: function() {
+  startSpinner: function () {
     App.$spinner.show();
     FormView.setStatus(true);
   },
 
-  stopSpinner: function() {
+  stopSpinner: function () {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
   }

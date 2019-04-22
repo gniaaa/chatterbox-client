@@ -19,8 +19,16 @@ body {
 #main {
     background: #305F72;
     color: white;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
 }
 
+#chats {
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+
+}
+    
 #main h1 {
     margin-top: 0;
     font-size: 35px;
@@ -64,6 +72,8 @@ form input[type=text] {
     font-size: 12px;
     padding: 5px;
 }
+
+/* CHAT */ 
 
 .chat {
     padding: 5px;
@@ -109,6 +119,10 @@ form input[type=text] {
 
 .friend:hover {
     background-color: rgb(235, 165, 162);
+}
+
+.friend .username:hover {
+    color: rgb(179, 63, 65);
 }
 
 /* SPINNER */
