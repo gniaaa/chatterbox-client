@@ -5,14 +5,20 @@ body {
     font-family: arial, sans-serif;
 }
 
+
 #main, #chats {
     width: 500px;
     margin: auto;
     text-align: left;
-    background: white;
+    background: #F1D1B5;
     padding: 50px 60px;
     border: solid #ddd;
     border-width: 0 1px 1px 1px;
+}
+
+#main {
+    background: #305F72;
+    color: white;
 }
 
 #main h1 {
@@ -62,16 +68,50 @@ form input[type=text] {
 .chat {
     padding: 5px;
     margin-bottom: 5px;
-    background-color: #eee;
+    background-color: #F0B7A4;
+    border-radius: 7px 7px;
+}
+
+.chat:hover {
+    background-color: #F18c8E;
 }
 
 .chat .username {
     font-weight: 800;
+    color: rgb(179, 63, 65);
 }
 
-.chat:hover {
-    background-color: #ddd;
+.chat .username:hover {
+    cursor: pointer;
+    color: #305F72;
 }
+.chat .text {
+    color: rgb(67, 68, 70);
+}
+
+.roomname {
+    display: none;
+}
+
+/* FRIEND */
+
+.friend {
+    background-color: #F18c8E;
+}
+
+.friend .text{
+    color: rgb(250, 224, 223);
+}
+
+.friend .username {
+    color: #305F72;
+}
+
+.friend:hover {
+    background-color: rgb(235, 165, 162);
+}
+
+/* SPINNER */
 
 .spinner {
     float: right;
@@ -81,34 +121,4 @@ form input[type=text] {
 
 .spinner img {
     padding: 10px;
-}
-
-/* .friend {
-    color: #fff;
-    background-color: #0090da;
-} */
-
-.roomname {
-    display: none;
-}
-
-.friend {
-    background-color: rgb(253, 203, 201);
-}
-
-.friend:hover {
-    background-color: rgb(250, 224, 223);
-}
-
-.friend .username {
-    color: rgb(153, 50, 60);
-}
-
-.friend .text {
-    color: rgb(117, 117, 117);
-}
-
-.username:hover {
-    cursor: pointer;
-    color: #adabac;
 }
